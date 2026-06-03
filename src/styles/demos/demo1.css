@@ -1,0 +1,261 @@
+/* Variables */
+.demo1 {
+  --tw-sidebar-transition-duration: 0.3s;
+  --tw-sidebar-transition-timing: ease;
+  --tw-sidebar-width: theme('custom.layouts.demo1.sidebar.width.desktop');
+  --tw-sidebar-lg-width :theme('custom.layouts.demo1.sidebar.width.lgDesktop');
+  --tw-sidebar-default-width: theme('custom.layouts.demo1.sidebar.width.desktop');
+  --tw-header-height: theme('custom.layouts.demo1.header.height.desktop');
+}
+
+@media (max-width: theme('screens.lg')) {
+  .demo1 {
+    --tw-sidebar-width: theme('custom.layouts.demo1.sidebar.width.mobile');
+    --tw-header-height: theme('custom.layouts.demo1.header.height.mobile');
+  }
+}
+
+/* Base */
+.demo1 .header {
+  height: var(--tw-header-height);
+}
+
+.demo1 .sidebar {
+  width: var(--tw-sidebar-width);
+}
+
+
+.demo1.header-fixed .wrapper {
+  padding-top: var(--tw-header-height);
+}
+
+/* Desktop mode */
+@media (min-width: theme('screens.lg')) {
+  .demo1 .sidebar {
+    width: var(--tw-sidebar-width);
+    transition:
+      width var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing),
+      transform var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing);
+  }
+  
+
+  .demo1 .sidebar .sidebar-header {
+    height: var(--tw-header-height);
+  }
+
+  .demo1 .sidebar .sidebar-wrapper {
+    width: var(--tw-sidebar-default-width);
+  }
+
+  .demo1 .sidebar .sidebar-logo {
+    width: var(--tw-sidebar-default-width);
+  }
+
+  .demo1 .sidebar .small-logo {
+    display: none;
+  }
+
+  .demo1.sidebar-fixed .wrapper {
+    padding-inline-start: var(--tw-sidebar-width);
+  }
+
+  .demo1.sidebar-fixed.header-fixed .header {
+    inset-inline-start: var(--tw-sidebar-width);
+  }
+
+  .demo1.sidebar-fixed.header-fixed .wrapper {
+    padding-top: var(--tw-header-height);
+  }
+
+  /* Desktop collapse mode */
+  .demo1.sidebar-collapse {
+    --tw-sidebar-width: theme('custom.layouts.demo1.sidebar.width.desktopCollapse');
+  }
+
+  .demo1.sidebar-collapse .sidebar {
+    transition: width var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing);
+  }
+
+  .demo1.sidebar-collapse .sidebar.animating {
+    pointer-events: none;
+  }
+
+  /* Prevent hover-based temporary expansion when the layout is in "sidebar-collapse" state.
+     Apply collapsed styles unconditionally while the collapse class is present so the
+     sidebar doesn't reveal titles/accordions on mouse hover (avoids layout corruption).
+  */
+
+  .demo1.sidebar-collapse .sidebar {
+    /* keep transition but force collapsed width via the variable set on .demo1.sidebar-collapse */
+    transition: width var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing);
+  }
+
+  /* Always hide the default (full) logo and show the small logo when collapsed */
+  .demo1.sidebar-collapse .sidebar .default-logo {
+    display: none;
+  }
+
+  .demo1.sidebar-collapse .sidebar .small-logo {
+    display: flex;
+  }
+
+  /* Always hide menu titles, arrows and badges in collapsed mode (don't rely on :hover) */
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-link .menu-title,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-link .menu-arrow,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-link .menu-badge,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-label .menu-title,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-label .menu-arrow,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-label .menu-badge {
+    display: none;
+  }
+
+  /* Hide nested accordions and headings when collapsed */
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-accordion {
+    display: none;
+  }
+
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-heading {
+    visibility: hidden;
+    position: relative;
+  }
+
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-heading::before {
+    content: '...';
+    color: currentColor;
+    font-size: inherit;
+    position: absolute;
+    visibility: visible;
+    display: inline-block;
+    bottom: 50%;
+    inset-inline-start: 0;
+    margin-inline-start: 0.225rem;
+    transform: translateX(100%);
+  }
+
+  /* Keep content overflow hidden in collapsed mode to avoid visual glitches */
+  .demo1.sidebar-collapse .sidebar .sidebar-content {
+    overflow: hidden;
+  }
+}
+
+.demo1.layout-initialized .wrapper {
+  transition: padding-inline-start var(--tw-sidebar-transition-duration)
+    var(--tw-sidebar-transition-timing);
+}
+
+.demo1.layout-initialized .header {
+  transition: inset-inline-start var(--tw-sidebar-transition-duration)
+    var(--tw-sidebar-transition-timing);
+}
+
+
+/* Desktop mode */
+@media (min-width: 1540px) {
+  .demo1 {
+    --tw-sidebar-width: var(--tw-sidebar-lg-width);
+  }
+
+  .demo1 .sidebar {
+    transition:
+      width var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing),
+      transform var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing);
+  }
+ .demo1 .sidebar .sidebar-header {
+    height: var(--tw-header-height);
+  }
+
+  .demo1 .sidebar .sidebar-wrapper {
+    width: var(--tw-sidebar-default-width);
+  }
+
+  .demo1 .sidebar .sidebar-logo {
+    width: var(--tw-sidebar-default-width);
+  }
+
+  .demo1 .sidebar .small-logo {
+    display: none;
+  }
+
+  .demo1.sidebar-fixed .wrapper {
+    padding-inline-start: var(--tw-sidebar-width);
+  }
+
+  .demo1.sidebar-fixed.header-fixed .header {
+    inset-inline-start: var(--tw-sidebar-width);
+  }
+
+  .demo1.sidebar-fixed.header-fixed .wrapper {
+    padding-top: var(--tw-header-height);
+  }
+
+  .demo1.sidebar-collapse {
+    
+    --tw-sidebar-width: theme('custom.layouts.demo1.sidebar.width.desktopCollapse');
+  }
+
+  .demo1.sidebar-collapse .sidebar {
+    transition: width var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing);
+  }
+
+  .demo1.sidebar-collapse .sidebar.animating {
+    pointer-events: none;
+  }
+
+  /* Prevent hover-based temporary expansion when the layout is in "sidebar-collapse" state.
+     Apply collapsed styles unconditionally while the collapse class is present so the
+     sidebar doesn't reveal titles/accordions on mouse hover (avoids layout corruption).
+  */
+
+  .demo1.sidebar-collapse .sidebar {
+    /* keep transition but force collapsed width via the variable set on .demo1.sidebar-collapse */
+    transition: width var(--tw-sidebar-transition-duration) var(--tw-sidebar-transition-timing);
+  }
+
+  /* Always hide the default (full) logo and show the small logo when collapsed */
+  .demo1.sidebar-collapse .sidebar .default-logo {
+    display: none;
+  }
+
+  .demo1.sidebar-collapse .sidebar .small-logo {
+    display: flex;
+  }
+
+  /* Always hide menu titles, arrows and badges in collapsed mode (don't rely on :hover) */
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-link .menu-title,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-link .menu-arrow,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-link .menu-badge,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-label .menu-title,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-label .menu-arrow,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-label .menu-badge {
+    display: none;
+  }
+
+  /* Hide nested accordions and headings when collapsed */
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-accordion {
+    display: none;
+  }
+
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-heading {
+    visibility: hidden;
+    position: relative;
+  }
+
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-heading::before {
+    content: '...';
+    color: currentColor;
+    font-size: inherit;
+    position: absolute;
+    visibility: visible;
+    display: inline-block;
+    bottom: 50%;
+    inset-inline-start: 0;
+    margin-inline-start: 0.225rem;
+    transform: translateX(100%);
+  }
+
+  /* Keep content overflow hidden in collapsed mode to avoid visual glitches */
+  .demo1.sidebar-collapse .sidebar .sidebar-content {
+    overflow: hidden;
+  }
+
+}

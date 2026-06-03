@@ -1,0 +1,11 @@
+/* Tailwind core */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Demos */
+@import "demos/demo1";
+/* animations */
+@import "animations.css";
+/* Shadcn UI */
+@import "shadcn.ui";

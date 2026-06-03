@@ -1,0 +1,62 @@
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+
+import { toAbsoluteUrl } from '@/utils';
+
+const CheckEmail = () => {
+  return (
+    <div className="card max-w-[440px] w-full">
+      <div className="card-body p-10">
+        <div className="flex justify-center py-10">
+          <img
+            src={toAbsoluteUrl('/media/illustrations/30.svg')}
+            className="dark:hidden max-h-[130px]"
+            alt=""
+          />
+          <img
+            src={toAbsoluteUrl('/media/illustrations/30-dark.svg')}
+            className="light:hidden max-h-[130px]"
+            alt=""
+          />
+        </div>
+
+        <h3 className="text-lg font-medium text-gray-900 text-center mb-3">
+          <FormattedMessage id="AUTH.CHECK_EMAIL.TITLE" />
+        </h3>
+        <div className="text-2sm text-center text-gray-700 mb-7.5">
+          <FormattedMessage
+            id="AUTH.CHECK_EMAIL.VERIFY"
+            values={{
+              email: (
+                <a
+                  href="#"
+                  className="text-2sm text-gray-900 font-medium hover:text-primary-active"
+                >
+                  bob@keenthemes.com
+                </a>
+              ),
+              br: <br />
+            }}
+          />
+        </div>
+
+        <div className="flex justify-center mb-5">
+          <Link to="/" className="btn btn-primary flex justify-center">
+            <FormattedMessage id="AUTH.CHECK_EMAIL.BACK_HOME" />
+          </Link>
+        </div>
+
+        <div className="flex items-center justify-center gap-1">
+          <span className="text-xs text-gray-700">
+            <FormattedMessage id="AUTH.CHECK_EMAIL.NO_EMAIL" />
+          </span>
+          <Link to="/auth/classic/login" className="text-xs font-medium link">
+            <FormattedMessage id="AUTH.RESEND" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { CheckEmail };
