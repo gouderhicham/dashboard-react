@@ -2,7 +2,7 @@ import { Fragment, useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Outlet, useLocation } from 'react-router';
 import { useMenuCurrentItem } from '@/components/menu';
-import { Footer, Header, Sidebar, useDemo1Layout } from '../';
+import { Header, Sidebar, useDemo1Layout } from '../';
 import { useMenus } from '@/providers';
 
 const Main = () => {
@@ -59,8 +59,6 @@ const Main = () => {
         <main className="grow content pt-5" role="content">
           <Outlet />
         </main>
-
-        <Footer />
       </div>
     </Fragment>
   );

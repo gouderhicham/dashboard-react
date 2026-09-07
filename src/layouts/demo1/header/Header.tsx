@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useEffect } from 'react';
 import { Container } from '@/components/container';
-import { HeaderLogo, HeaderTopbar } from './';
+import { HeaderLogo, HeaderProfile } from './';
 import { useDemo1Layout } from '../';
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
     >
       <Container className="flex justify-between items-stretch lg:gap-4">
         <HeaderLogo />
-        <HeaderTopbar />
+        <HeaderProfile />
       </Container>
     </header>
   );

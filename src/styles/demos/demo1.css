@@ -132,6 +132,27 @@
     transform: translateX(100%);
   }
 
+  /* Collapsed: the menu column is still as wide as its widest child (the
+     headings above stay in flow via visibility:hidden, and the scroll
+     container is shrink-0), so a stretched menu-link would paint its
+     hover/active background right out to the clipped edge. Pin each root
+     link to the icon box instead: 20px icon + 10px padding either side. */
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-link,
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-label {
+    flex-grow: 0;
+    align-self: flex-start;
+    width: 40px;
+    padding-inline: 10px;
+    justify-content: center;
+  }
+
+  /* Stop the hidden heading text from widening that column in the first
+     place, so nothing can scroll sideways under the clip. */
+  .demo1.sidebar-collapse .sidebar .menu > .menu-item > .menu-heading {
+    width: 40px;
+    overflow: hidden;
+  }
+
   /* Keep content overflow hidden in collapsed mode to avoid visual glitches */
   .demo1.sidebar-collapse .sidebar .sidebar-content {
     overflow: hidden;

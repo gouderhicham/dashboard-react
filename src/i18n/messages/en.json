@@ -13,18 +13,6 @@
 
   "PAGE.TEST_PLACEHOLDER": "This is a test page — add your content here.",
 
-  "FOOTER.COMPANY": "Keenthemes Inc.",
-  "FOOTER.DOCS": "Docs",
-  "FOOTER.PURCHASE": "Purchase",
-  "FOOTER.FAQ": "FAQ",
-  "FOOTER.SUPPORT": "Support",
-  "FOOTER.LICENSE": "License",
-
-  "USER.MENU.DARK_MODE": "Dark Mode",
-  "USER.MENU.LOGOUT": "Logout",
-  "USER.MENU.LANGUAGE": "Language",
-  "USER.MENU.PRO": "Pro",
-
   "AUTH.OR": "Or",
   "AUTH.USE_GOOGLE": "Use Google",
   "AUTH.USE_APPLE": "Use Apple",
