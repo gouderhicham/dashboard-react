@@ -45,7 +45,6 @@ export default defineConfig({
       'yup',
       'react-intl',
       '@tanstack/react-query',
-      '@tanstack/react-table',
       'lucide-react'
     ]
   },
@@ -63,10 +62,8 @@ export default defineConfig({
           if (!id.includes('node_modules')) return;
 
           // Keep React-dependent libraries in one vendor chunk. Splitting
-          // packages such as react-helmet-async can trigger CJS/ESM
-          // initialization-order errors in production.
-          if (id.includes('leaflet')) return 'leaflet';
-          if (id.includes('date-fns')) return 'date-fns';
+          // them apart can trigger CJS/ESM initialization-order errors in
+          // production.
           if (id.includes('lucide-react')) return 'icons';
 
           return 'vendor';

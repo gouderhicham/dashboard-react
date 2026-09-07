@@ -34,8 +34,8 @@ const carouselSlides = [
     ),
   },
   {
-    image: '/media/images/2600x1600/3.png',
-    imageDark: '/media/images/2600x1600/3-dark.png',
+    image: '/media/images/2600x1600/bg-1.png',
+    imageDark: '/media/images/2600x1600/bg-1-dark.png',
     title: 'Seamless Integration',
     description: (
       <>

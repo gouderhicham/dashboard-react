@@ -94,7 +94,7 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
         first_name: 'John',
         last_name: 'Doe',
         fullname: 'John Doe',
-        pic: '/media/avatars/300-1.jpg'
+        pic: '/media/avatars/300-1.png'
       };
       
       setCurrentUser(user);
@@ -127,7 +127,7 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
         first_name: 'Jane',
         last_name: 'Smith',
         fullname: 'Jane Smith',
-        pic: '/media/avatars/300-2.jpg'
+        pic: '/media/avatars/300-2.png'
       };
       
       setCurrentUser(user);
@@ -171,7 +171,7 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
       first_name: 'John',
       last_name: 'Doe',
       fullname: 'John Doe',
-      pic: '/media/avatars/300-1.jpg'
+      pic: '/media/avatars/300-1.png'
     };
     
     // Return in axios response format
